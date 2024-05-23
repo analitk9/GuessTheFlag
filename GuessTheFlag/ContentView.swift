@@ -41,9 +41,8 @@ struct ContentView: View {
                         .font(.largeTitle.weight(.semibold))
                     ForEach(0..<3) { num in
                         Button(action: { flagTapped(num) }, label: {
-                            Image(countries[num])
-                                .clipShape(.capsule)
-                                .shadow(radius: 5)
+                            let flagName = countries[num]
+                            FlagView(flagName: flagName)
                         })
                         
                         
