@@ -55,8 +55,9 @@ struct ContentView: View {
             Spacer()
             Spacer()
                 Text("Ваши очки \(score)")
-                .foregroundStyle(.white)
-                .font(.title.bold())
+//                .foregroundStyle(.white)
+//                .font(.title.bold())
+                    .blueLargeText()
             }
             .padding()
             Spacer()
@@ -103,6 +104,23 @@ struct ContentView: View {
         moveInGame = 8
     }
 }
+
+
+struct BlueText: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.largeTitle)
+            .foregroundColor(.blue)
+    }
+
+}
+
+extension View {
+    func blueLargeText()-> some View {
+        modifier(BlueText())
+    }
+}
+
 
 #Preview {
     ContentView()
